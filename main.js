@@ -13,7 +13,8 @@ const returnRandBase = () => {
     return newStrand
   }
   
-  
+// console.log(returnRandBase())
+// console.log(mockUpStrand())
   
   
   
