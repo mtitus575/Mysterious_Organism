@@ -21,13 +21,12 @@ const pAequorFactory = (specimenNum, dna) => {
     specimenNum: specimenNum,
     dna: dna,
     mutate() {
-          console.log('Initial dna strand:', dna) // remove later. Shows initial dna base strand
-      const randomSelectedBaseIndex = Math.floor(Math.random() * this.dna.length);
-      let randomSelectedBase = this.dna.splice(randomSelectedBaseIndex, 1);
-      let newArray = [...dna.slice(0, randomSelectedBaseIndex), 'test', ...dna.slice(randomSelectedBaseIndex)]; // this needs to be moved to after the if statement
+      const randomSelectedBaseIndex = Math.floor(Math.random() * this.dna.length); //returns the index of a randomly selected value in the 'dna' array.
+      let randomSelectedBase = this.dna.splice(randomSelectedBaseIndex, 1); //uses the index from above to select that specific value and stores it in this variable.
+      let newArray;  // This variable will be the returned array (array assigned later). It will have the values form the 'dna' but with one value randomly selected and randomly changed to not be equal to the randomly selected number.
       
-      //These variables stores an array with a set basis minus one of the base types.
-      //It will be used in the if statements to return a base not equal to the randomly selected base.
+      //These variables stores an array with a set basis(values), minus one of the base types.
+      //It will be used in the if statements to return a base not equal to the randomly selected base value.
       const basisWithoutA = ['T', 'C', 'G'];
         const notABase = basisWithoutA[Math.floor(Math.random() * 3)]; //the variable to be returned in the control flow.
 
@@ -42,7 +41,7 @@ const pAequorFactory = (specimenNum, dna) => {
 
       //if statement to return a random value that is not the same as the value removed.
       if(randomSelectedBase === 'A') {
-        newArray = [...dna.slice(0, randomSelectedBaseIndex), notABase, ...dna.slice(randomSelectedBaseIndex)];
+        newArray = [...dna.slice(0, randomSelectedBaseIndex), notABase, ...dna.slice(randomSelectedBaseIndex)];//the line takes the initial array and adds a new values to the index where the randomSelectedBase was removed. It then continues to add the remaining elements. This new array is stored in a different variable.
       } else if(randomSelectedBase === 'T') {
         newArray = [...dna.slice(0, randomSelectedBaseIndex), notTBase, ...dna.slice(randomSelectedBaseIndex)];
       } else if(randomSelectedBase === 'C') {
@@ -50,17 +49,13 @@ const pAequorFactory = (specimenNum, dna) => {
       } else {
         newArray = [...dna.slice(0, randomSelectedBaseIndex), notGBase, ...dna.slice(randomSelectedBaseIndex)];
       }
-      console.log('Adapated DNA:',newArray)
-
-          console.log('Index selected:' ,randomSelectedBaseIndex); // remove later
-          //console.log(randomSelectedBase);
-          //console.log(newArray);
-      //this.dna.splice(randomSelectedBaseIndex, 1, 'man'); //The 'man' represents the element that will be inserted in the place where the base is removed from
-          //console.log(dna) // remove later. SHows adapted dna strand
-
+      /* My testing area: */
+      //console.log('Original array of DNA:', dna);
+      //console.log('Index selected:' ,randomSelectedBaseIndex); 
+      //console.log('The selection:',randomSelectedBase); 
+      //console.log('Adapated DNA:',newArray)
       
-      
-
+      return newArray;
     }
   }
 };
