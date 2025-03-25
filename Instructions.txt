@@ -53,9 +53,11 @@ Objectives:
 
 5.  P. aequor have a likelier chance of survival if their DNA is made up of at least 60% 'C' or 'G' bases.
     In the returned object of pAequorFactory(), add another method .willLikelySurvive().
-    .willLikelySurvive() returns true if the object’s .dna array contains at least 60% 'C' or 'G' bases. Otherwise, .willLikelySurvive() returns false.
+    .willLikelySurvive() returns true if the object’s .dna array contains at least 60% 'C' or 'G' bases. 
+    Otherwise, .willLikelySurvive() returns false.
 
-6.  With the factory function set up, your team requests that you create 30 instances of pAequor that can survive in their natural environment. 
+6.  With the factory function set up, your team requests that you create 30 instances of pAequor that can survive in
+     their natural environment. 
     Store these instances in an array for your team to study later.
 
 Additional challenge steps:
