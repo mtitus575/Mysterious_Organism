@@ -68,15 +68,17 @@ const pAequorFactory = (specimenNum, dna) => {
       // console.log('The selection:',randomSelectedBase); 
       // console.log('Adapated DNA1:',newArray);
       
-      return newArray;
+      // return newArray; // this was my return
+      this.dna = newArray; return this.dna; //added from code review. Reasoning: The `mutate` method should modify the `dna` array in place rather than returning a new array. This will ensure that the object's `dna` property reflects the mutation.
     },
     //Step  4: a method to compare the dna of the intial object and the mutated method.
     compareDNA(organismObject) {
            
       const  currentDNA  = this.dna;
-      const  mutatedDNA = this.mutate();
+      // const  mutatedDNA = this.mutate(); // removed from my code
+      const otherDNA = organismObject.dna; // added from code review. Reasoning: The `compareDNA` method should compare the current object's `dna` with another `pAequor` object's `dna`, not with its own mutated version. Adjust the logic to compare with the passed `organismObject`.
 
-      const  matchingDNA = mutatedDNA.filter(function(obj) { 
+      const  matchingDNA = otherDNA.filter(function(obj) { 
         return currentDNA.indexOf(obj) !== -1; 
         });
       
