@@ -19,20 +19,24 @@ As you progress through the steps, use the terminal and console.log() statements
 
 Objectives:
 1.  Look over the starter code. There are two helper functions: returnRandBase() and mockUpStrand().
-    DNA is comprised of four bases (Adenine, Thymine, Cytosine, and Guanine). When returnRandBase() is called, it will randomly select a base and return the base ('A','T','C', or 'G').
+    DNA is comprised of four bases (Adenine, Thymine, Cytosine, and Guanine). When returnRandBase() is called, it will randomly 
+    select a base and return the base ('A','T','C', or 'G').
     mockUpStrand() is used to generate an array containing 15 bases to represent a single DNA strand with 15 bases.
     You’ll use these helper functions later to create your objects that represent P. aequor.
 
 2.  Since you need to create multiple objects, create a factory function pAequorFactory() that has two parameters:
         The first parameter is a number (no two organisms should have the same number).
         The second parameter is an array of 15 DNA bases.
-        pAequorFactory() should return an object that contains the properties specimenNum and dna that correspond to the parameters provided.
+        pAequorFactory() should return an object that contains the properties 'specimenNum' and 'dna' that correspond to the 
+        parameters provided.
     You’ll also add more methods to this returned object in the later steps.
 
 3.  Your team wants you to simulate P. aequor‘s high rate of mutation (change in its DNA).
     To simulate a mutation, in pAequorFactory()‘s returned object, add the method .mutate().
-    .mutate() is responsible for randomly selecting a base in the object’s dna property and changing the current base to a different base. Then .mutate() will return the object’s dna.
-        For example, if the randomly selected base is the 1st base and it is 'A', the base must be changed to 'T', 'C', or 'G'. But it cannot be 'A' again.
+    .mutate() is responsible for randomly selecting a base in the object’s dna property and changing the current base to a different base. 
+    Then .mutate() will return the object’s dna.
+        For example, if the randomly selected base is the 1st base and it is 'A', the base must be changed to 'T', 'C', or 'G'. 
+        But it cannot be 'A' again.
 
 4.  Your research team wants to be able to compare the DNA sequences of different P. aequor. You’ll have to add a new method (.compareDNA()) to the returned object of the factory function.
     .compareDNA() has one parameter, another pAequor object.
