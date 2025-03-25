@@ -38,9 +38,11 @@ Objectives:
         For example, if the randomly selected base is the 1st base and it is 'A', the base must be changed to 'T', 'C', or 'G'. 
         But it cannot be 'A' again.
 
-4.  Your research team wants to be able to compare the DNA sequences of different P. aequor. You’ll have to add a new method (.compareDNA()) to the returned object of the factory function.
+4.  Your research team wants to be able to compare the DNA sequences of different P. aequor. 
+    You’ll have to add a new method (.compareDNA()) to the returned object of the factory function.
     .compareDNA() has one parameter, another pAequor object.
-    The behavior of .compareDNA() is to compare the current pAequor‘s .dna with the passed in pAequor‘s .dna and compute how many bases are identical and in the same locations. 
+    The behavior of .compareDNA() is to compare the current pAequor‘s .dna with the passed in pAequor‘s .dna and 
+    compute how many bases are identical and in the same locations. 
     .compareDNA() does not return anything, but prints a message that states the percentage of DNA the two objects have in common;
         — use the .specimenNum to identify which pAequor objects are being compared.
         - for example:
